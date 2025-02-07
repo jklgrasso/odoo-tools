@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Check Odoo Duplicates
+Comment=Runs the chk-odoo-dups command in a terminal
+Exec=gnome-terminal -- bash -c "chk-odoo-dups; exec bash"
+Icon=utilities-terminal
+Terminal=false
+Type=Application
+Categories=Utility;
