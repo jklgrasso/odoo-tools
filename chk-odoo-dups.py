@@ -72,11 +72,13 @@ def get_api_key(password):
         print("Error: Incorrect password or decryption failed.")
         exit()
     
-    # Write decrypted data temporarily
-    with open(DECRYPTED_FILE, "w") as f:
-        f.write(str(decrypted_data))
+    decrypted_key = str(decrypted_data).strip()  # Ensure it's clean
     
-    return str(decrypted_data)
+    if not decrypted_key:
+        print("Error: Decryption succeeded but API key is empty.")
+        exit()
+    
+    return decrypted_key  # Use this clean API key
 
 # Function to securely delete decrypted file
 def cleanup():
